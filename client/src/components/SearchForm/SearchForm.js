@@ -4,7 +4,7 @@ import "./SearchForm.css";
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 const SearchForm = props =>
 
-    <div className="search-container">
+       <div className="search-container">
         <form className="col-lg-16">
             <label htmlFor="breed">Location:</label>
             <div className="input-group">
@@ -31,7 +31,6 @@ const SearchForm = props =>
                     {props.breeds.map(breed => <option value={breed} key={breed} />)}
                 </datalist>
             </div>
-     
         </form>
 
     </div>;
