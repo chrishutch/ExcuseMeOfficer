@@ -42,6 +42,7 @@ label {
 #navbarSupportedContent {
     float: right;
     text-align: right;
+    margin-left:5%;
 }
 
 ul {
