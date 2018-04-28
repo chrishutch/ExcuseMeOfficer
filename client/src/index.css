@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+div[data-reactroot] {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 3px #000000;
+}
+
+a:hover {
+    color: white;
+    font-weight: bolder;
+    text-shadow: 0 0 3px #000000;
+    }
+
+label {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 3px #000000;
+}
+
+.navLogo {
+    width: 200px;
+    height: 80px;
+}
+
+.navlist {
+    float: right;
+    text-align: right;
+}
+
+#navbarSupportedContent {
+    float: right;
+    text-align: right;
+}
+
+ul {
+    float: right;
+    text-align: right;
+    margin-top: 7%;
+}
+
+.navbar-nav {
+    float: right;
+    text-align: right;
+}
+
+.mr-auto {
+    float: right;
+    text-align: right;
+}
+
+li {
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 17px;
+    margin: 9px;
+}
+
+.navbar-header {
+    float: right;
+    text-align: right;
+}
+
+#homeContainer {
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+#signup {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+#signup:hover {
+    border: 2px solid white;
+    background-color: white;
+
+}
+
+
+
+.search-container button {
+    float: left;
+    padding: 10px 15px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #00ff90;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
