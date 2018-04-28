@@ -14,9 +14,12 @@ const reviewSchema = new Schema({
 		  		latitude: Number
 		  	}
 		  	required: true }],
-  officername: [{body: String}],
+  officerName: [{body: String}],
+  officerBadge: [{body: String}],
+  ticketNumber: [{body: String}],
   comments: [{ body: String, date: Date }],
   location: { type: String, required: true },
+  experience: { type: String, required: true },
   rating: { type: Number, required: true },
   feedback: { type: String, required: true },
   hidden: Boolean,
