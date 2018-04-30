@@ -42,6 +42,7 @@ label {
 #navbarSupportedContent {
     float: right;
     text-align: right;
+    margin-left:5%;
 }
 
 ul {
@@ -93,12 +94,9 @@ li {
 
 }
 
-
-
 .search-container button {
     float: left;
     padding: 10px 15px;
-    margin-top: 8px;
     margin-right: 16px;
     background: #00ff90;
     font-size: 17px;

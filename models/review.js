@@ -9,10 +9,6 @@ const reviewSchema = new Schema({
 		  	zipcode: String,
 		  	county: String,
 		  	country: String,
-		  	gps:{
-		  		longitude: Number,
-		  		latitude: Number
-		  	}
 		  	required: true }],
   officerName: [{body: String}],
   officerBadge: [{body: String}],
@@ -26,8 +22,9 @@ const reviewSchema = new Schema({
   user: {
   	type: Schema.ObjectId,
   	ref: "Users"
-  }
-  dateCreated: { type: Date, default: Date.now }
+  },
+  created_at  : {type: Date, default: Date.now},
+  updated_at  : {type: Date}
 });
 
 const Review = mongoose.model("Review", reviewSchema);
