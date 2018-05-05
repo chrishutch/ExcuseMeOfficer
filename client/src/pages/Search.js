@@ -27,27 +27,27 @@ class Search extends Component {
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
-  componentDidMount() {
-    API.getBaseBreedsList()
-      .then(res => this.setState({ breeds: res.data.message }))
-      .catch(err => console.log(err));
-  }
+  // componentDidMount() {
+  //   API.getBaseBreedsList()
+  //     .then(res => this.setState({ breeds: res.data.message }))
+  //     .catch(err => console.log(err));
+  // }
 
-  handleInputChange = event => {
-    this.setState({ search: event.target.value });
-  };
+  // handleInputChange = event => {
+  //   this.setState({ search: event.target.value });
+  // };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
-  };
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   API.getDogsOfBreed(this.state.search)
+  //     .then(res => {
+  //       if (res.data.status === "error") {
+  //         throw new Error(res.data.message);
+  //       }
+  //       this.setState({ results: res.data.message, error: "" });
+  //     })
+  //     .catch(err => this.setState({ error: err.message }));
+  // };
   render() {
       return (
    /*Navbar*/

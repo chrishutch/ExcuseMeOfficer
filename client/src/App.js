@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import News from "./components/News/News.js";
 import FormInstance from "./pages/FormInstance";
-import FieldGroup from "./components/Form/FieldGroup";
+
 
 const App = () =>
   <Router>

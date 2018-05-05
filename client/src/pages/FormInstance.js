@@ -1,201 +1,172 @@
-import React, { Component } from 'react';
-import FieldGroup from '../components/Form/FieldGroup';
+import React, { Component } from "react";
+import API from "../utils/API";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
+import { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Evidence, Witness, DateTime, Rating } from "../components/Form";
 
-import { Checkbox, 
-  Radio, 
-  ControlLabel, 
-  FormGroup, 
-  FormControl, 
-  Button,
-  Grid, 
-  Row, 
-  Col,
-  ProgressBar,
-  PageHeader
-} from 'react-bootstrap';
+class Reviews extends Component {
+  state = {
+      date: "",
+      street: "",
+      city: "",
+      state: "",
+      zipcode: "",
+      officerName: "",
+      officerBadge: "",
+      ticketNumber: "",
+      witness: "",
+      evidence: "",
+      location: "",
+      experience: "",
+      rating: "",
+      feedback: ""
+  };
 
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-
-
-  class FormInstance extends Component {
-    render() {
-      return (
-      <Grid>
-        <form>
-        
-            <Row className="show-grid">
-              <Col xs={12} md={8}>
-                <FieldGroup
-                  id="formControlsText"
-                  type="text"
-                  label="First, when did the interaction happen?*"
-                  placeholder="Enter text"
-                />
-              </Col>
-            </Row>
-          
-            <Row className="show-grid">
-              <Col xs={12} md={3}>
-                <FieldGroup
-                  id="formControlsText"
-                  type="text"
-                  label="Where did it happen? "
-                  placeholder="Enter Street Address here"
-                />
-              </Col>
-              <Col xs={12} md={3}>
-                <FieldGroup
-                  id="formControlsText"
-                  type="text"
-                  label="    "
-                  placeholder="City"
-                />
-              </Col>
-              <Col xs={12} md={3}>
-                <FieldGroup
-                  id="formControlsText"
-                  type="text"
-                  label="    "
-                  placeholder="zip Code"
-                />
-              </Col>
-            </Row>
-            <Row className="show-grid">
-              <Col xs={12} md={6}>  
-                <FormGroup controlId="formControlsTextarea">
-                  <ControlLabel>What Happened?</ControlLabel>
-                  <FormControl componentClass="textarea" placeholder="Write what happened here" />
-                </FormGroup>
-              </Col>
-            </Row>
-
-          <Row className='show-grid'>
-            <Col xs={12} md={6}>
-              <FieldGroup
-                id="formControlsFile"
-                type="file"
-                label="File"
-                help="Evidence Locker."
-              />
-            </Col>
-          </Row>
-
-          <Row className='show-grid'>
-            <Col xs={12} md={6}>
-            <FormGroup controlId="formControlsSelect">
-              <ControlLabel>Describ you Experience</ControlLabel>
-              <FormControl componentClass="select" placeholder="select">
-                <option value="1">Great Service</option>
-                <option value="2">Heroic</option>
-                <option value="3">Averge</option>
-                <option value="4">Racial Discrimination</option>
-                <option value="5">Sexual Harrassment</option>
-                <option value="6">LGBT Inequality</option>
-              </FormControl>
-            </FormGroup>
-            </Col>
-          </Row>
-
-          <ProgressBar now={100} />
-            <PageHeader>
-              <small>Additional Information</small>
-            </PageHeader>
-          <ProgressBar now={100} />
-
-          <Row className="show-grid">
-            <Col xs={12} md={3}>
-              <FieldGroup
-                id="formControlsText"
-                type="text"
-                label="Officiers Name"
-                placeholder="Enter text"
-              />
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col xs={12} md={3}>
-              <FieldGroup
-                id="formControlsText"
-                type="text"
-                label="Offiers Badge No."
-                placeholder="Enter text"
-              />
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col xs={12} md={3}>
-              <FieldGroup
-                id="formControlsText"
-                type="text"
-                label="Tickect/Citation No."
-                placeholder="Enter text"
-              />
-            </Col>
-          </Row>
-
-          <Row className='show-grid'>
-            <Col xs={12} md={12}>
-              <code>Did the interaction happen while part of?</code>
-              <FormGroup>
-                <Checkbox inline>RideSharing</Checkbox> <Checkbox inline>School Campus</Checkbox>{' '}
-                <Checkbox inline>Event/Protest</Checkbox>
-              </FormGroup>
-            </Col>
-          </Row>
-          <FieldGroup 
-          id="formControlsPassword" 
-          label="Password" 
-          type="password" />
-          
-         
-          <Checkbox checked readOnly>
-            Checkbox
-          </Checkbox>
-          <Radio checked readOnly>
-            Radio
-          </Radio>
-          <FormGroup>
-            <Checkbox inline>1</Checkbox> <Checkbox inline>2</Checkbox>{' '}
-            <Checkbox inline>3</Checkbox>
-          </FormGroup>
-          <FormGroup>
-            <Radio name="radioGroup" inline>
-              1
-            </Radio>{' '}
-            <Radio name="radioGroup" inline>
-              2
-            </Radio>{' '}
-            <Radio name="radioGroup" inline>
-              3
-            </Radio>
-          </FormGroup>
-          <FormGroup controlId="formControlsSelect">
-            <ControlLabel>Select</ControlLabel>
-            <FormControl componentClass="select" placeholder="select">
-              <option value="select">select</option>
-              <option value="other">...</option>
-            </FormControl>
-          </FormGroup>
-          <FormGroup controlId="formControlsSelectMultiple">
-            <ControlLabel>Multiple select</ControlLabel>
-            <FormControl componentClass="select" multiple>
-              <option value="select">select (multiple)</option>
-              <option value="other">...</option>
-            </FormControl>
-          </FormGroup>
-          <FormGroup controlId="formControlsTextarea">
-            <ControlLabel>Textarea</ControlLabel>
-            <FormControl componentClass="textarea" placeholder="textarea" />
-          </FormGroup>
-          <FormGroup>
-            <ControlLabel>Static text</ControlLabel>
-            <FormControl.Static>email@example.com</FormControl.Static>
-          </FormGroup>
-          <Button type="submit">Submit</Button>
-        </form>
-      </Grid>
-      )
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.feedback && this.state.city) {
+      API.saveReview({
+        // date: this.state.date,
+        street: this.state.street,
+        city: this.state.city,
+        state: this.state.state,
+        zipcode: this.state.zipcode,
+        experience: this.state.experience,
+        rating: this.state.rating,
+        feedback: this.state.feedback,
+        evidence: this.state.evidence,
+        witness: this.state.witness,
+        officerName: this.state.officerName,
+        officerBadge: this.state.officerBadge,
+        ticketNumber: this.state.ticketNumber
+      })
+        // .then(res => this.loadReviews())
+        .catch(err => console.log(err));
     }
+  };
+
+  render() {
+    return (
+      <Container fluid>
+        <Row>
+        <Col size="md-3">
+        </Col>
+          <Col size="md-6">
+              <h1>Leave Officer Feedback</h1>
+              <br />
+            <form>
+            <h5>When did this happen?</h5>
+            <DateTime
+                value={this.state.date}
+                onChange={this.handleInputChange}
+                name="date"
+              />
+              <h5>Where did this happen?</h5>
+              <Address
+                value={this.state.street}
+                onChange={this.handleInputChange}
+                name="street"
+                placeholder="1234 Michigan Street (required)"
+              />
+              <FormRow>
+              <City
+                value={this.state.city}
+                onChange={this.handleInputChange}
+                name="city"
+                placeholder="City (required)"
+              />
+              <State
+                value={this.state.state}
+                onChange={this.handleInputChange}
+                name="state"
+              />
+              <Zip
+                value={this.state.zipcode}
+                onChange={this.handleInputChange}
+                name="zipcode"
+                placeholder="60202"
+              />
+              </FormRow>
+              <h5>Describe your experience.</h5>
+              <Input
+                value={this.state.experience}
+                onChange={this.handleInputChange}
+                name="experience"
+              />
+              <h5>Rate your experience.</h5>
+              <Rating 
+                value={this.state.rating}
+                onChange={this.handleInputChange}
+                name="rating"
+              />
+              <br/>
+              <br/>
+              <h5>What happened?</h5>
+              <h6>Tell us your story.</h6>
+              <TextArea
+                value={this.state.feedback}
+                onChange={this.handleInputChange}
+                name="feedback"
+                placeholder="Excuse me officer, ..."
+              />
+              <Evidence
+                value={this.state.evidence}
+                onChange={this.handleInputChange}
+                name="evidence"
+              />
+              
+              <br/>
+              <hr/>
+              <h2>Additional Information</h2>
+              <hr/>
+              <h5>Were you a witness?</h5>
+              <Witness
+                value={this.state.witness}
+                onChange={this.handleInputChange}
+                name="witness"
+              />
+              <br />
+              <h5>Officer Name(s):</h5>
+               <Input
+                value={this.state.officerName}
+                onChange={this.handleInputChange}
+                name="officerName"
+              />
+              <h5>Officer Badge Number(s):</h5>
+               <Input
+                value={this.state.officerBadge}
+                onChange={this.handleInputChange}
+                name="officerBadge"
+              />
+              <h5>Ticket/Citation Numbers:</h5>
+               <Input
+                value={this.state.ticketNumber}
+                onChange={this.handleInputChange}
+                name="ticketNumber"
+              />
+              <br/>
+              <FormBtn
+                // disabled={!(this.state.author && this.state.title)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit Feedback
+              </FormBtn>
+            </form>
+          </Col>
+          <Col size="md-3">
+        </Col>
+        </Row>
+      </Container>
+    );
+  }
 }
-export default FormInstance;
+
+export default Reviews;
