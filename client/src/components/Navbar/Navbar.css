@@ -1,3 +1,79 @@
-nav.navbar.navbar-default {
-  margin-bottom: 0;
+
+#search {
+
+    display: inline-block;
+    background: transparent;
+    position: relative;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+
+#searchsubmit {
+}
+
+#navbar navbar-secondary {
+    border-top: 1px solid black;
+    height: 5%;
+
+}
+
+
+#navlogo {
+    margin-left:0%;
+
+  
+}
+
+#navcontainer {
+
+    background-color:aquamarine;
+
+}
+
+#form1 {
+    margin-right:20%;
+
+}
+
+#searchnav {
+    /* margin-right:35%*/
+    text-align: center
+}
+
+
+
+@media screen and (max-width: 100px) {
+    .column {
+        width: 20%;
+    }
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+    text-shadow:1px 1px 4px #000000;
+}
+
+.secondnav {
+    border-bottom: 2px solid #99D092;
+}
+
+    .secondnav input {
+        border: 1px solid #375b60;
+    }
+    .secondnav .input-group-btn {
+        border: 1px solid #375b60;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 6px;
+    }
+
+
+.navsecond {
+
+}
+
+#searchnav {
+ 
 }

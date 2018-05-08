@@ -14,7 +14,8 @@ app.use(express.static("client/build"));
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect('mongodb://transparentcop:changeishere2018@ds263619.mlab.com:63619/officerfeedback');
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/officerfeedback");
+// mongoose.connect("mongodb://transparentcop:changeishere2018@ds263619.mlab.com:63619/officerfeedback");
 
 // Start the API server
 app.listen(PORT, function() {

@@ -7,8 +7,8 @@ const usersSchema = new Schema({
   gender: { type: String, required: true },
   age: { type: Number, required: true },
   race: { type: String, default: "Unknown" },
-  review: [{
-  	type: Schema.ObjectId,
+  _reviewId: [{
+  	type: Schema.Types.ObjectId,
   	ref: "Review"
   }]
   dateCreated: { type: Date, default: Date.now }

@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Evidence, Witness, DateTime, Rating } from "../components/Form";
+import { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Evidence, Witness, DateCollected, TimeCollected, Rating } from "../components/Form";
 
 class Reviews extends Component {
   state = {
+      reviews: [],
       date: "",
+      time: "",
       street: "",
       city: "",
       state: "",
@@ -14,14 +16,23 @@ class Reviews extends Component {
       officerName: "",
       officerBadge: "",
       ticketNumber: "",
-      witness: "",
-      evidence: "",
-      location: "",
+      // witness: "",
+      // evidence: "",   
       experience: "",
-      rating: "",
+      // rating: "",
       feedback: ""
   };
 
+  componentDidMount() {
+    this.loadReviews();
+  }
+
+  loadReviews = () => {
+    API.getReviews()
+      .then(res =>
+        this.setState({ reviews: res.data, date: "", time: "", street: "", city: "", state:"IL", zipcode: "", officerName: "", officerBadge: "", ticketNumber: "", experience: "", feedback: "" }))
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -34,27 +45,29 @@ class Reviews extends Component {
     event.preventDefault();
     if (this.state.feedback && this.state.city) {
       API.saveReview({
-        // date: this.state.date,
+        date: this.state.date,
+        time: this.state.time,
         street: this.state.street,
         city: this.state.city,
         state: this.state.state,
         zipcode: this.state.zipcode,
         experience: this.state.experience,
-        rating: this.state.rating,
+        // rating: this.state.rating,
         feedback: this.state.feedback,
-        evidence: this.state.evidence,
-        witness: this.state.witness,
+        // evidence: this.state.evidence,
+        // witness: this.state.witness,
         officerName: this.state.officerName,
         officerBadge: this.state.officerBadge,
-        ticketNumber: this.state.ticketNumber
+        ticketNumber: this.state.ticketNumber 
       })
-        // .then(res => this.loadReviews())
+        .then(res => this.loadReviews())
         .catch(err => console.log(err));
     }
   };
 
   render() {
     return (
+      <div>
       <Container fluid>
         <Row>
         <Col size="md-3">
@@ -64,10 +77,15 @@ class Reviews extends Component {
               <br />
             <form>
             <h5>When did this happen?</h5>
-            <DateTime
+            <DateCollected
                 value={this.state.date}
                 onChange={this.handleInputChange}
                 name="date"
+              />
+              <TimeCollected
+                value={this.state.time}
+                onChange={this.handleInputChange}
+                name="time"
               />
               <h5>Where did this happen?</h5>
               <Address
@@ -154,8 +172,9 @@ class Reviews extends Component {
               />
               <br/>
               <FormBtn
-                // disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.city && this.state.feedback)}
                 onClick={this.handleFormSubmit}
+
               >
                 Submit Feedback
               </FormBtn>
@@ -165,6 +184,7 @@ class Reviews extends Component {
         </Col>
         </Row>
       </Container>
+      </div>
     );
   }
 }

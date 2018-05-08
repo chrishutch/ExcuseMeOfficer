@@ -1,10 +1,25 @@
-.footer {
-    height: 50px;
-    position: fixed;
-    background-color: #375b60;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+.btn-floating {
+    margin: 5%;
+    font-size: 20px;
+}
+
+.btn-fb {
+    background-color: cornflowerblue;
+}
+
+.btn-tw {
+    background-color: deepskyblue;
+}
+
+.btn-gplus {
+    background-color: coral;
+}
+
+.btn-dribbble {
+    background-color: #EA4C89;
+}
+
+.footercontent {
+    color: black;
+    text-shadow: 1px 1px 1px #FFFFFF;
 }

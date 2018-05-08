@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
   date: String,
+  time: String,
   street: String,
 	city: String,
 	state: String,
@@ -12,18 +13,16 @@ const reviewSchema = new Schema({
   officerName: String,
   officerBadge: String,
   ticketNumber: String,
-  comments: String,
-  location: String,
   experience: String,
   rating: String,
   feedback: String,
   hidden: Boolean,
-  user: {
-  	type: Schema.ObjectId,
-  	ref: "Users"
-  },
-  created_at  : {type: Date, default: Date.now},
-  updated_at  : {type: Date}
+  // _userId: {
+  // 	type: Schema.Types.ObjectId,
+  // 	ref: "Users"
+  // },
+  created_at  : {type: Date, default: Date.now}
+  // updated_at  : {type: Date}
 });
 
 // reviewSchema.pre('save', function(next) {

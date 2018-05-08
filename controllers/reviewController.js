@@ -9,18 +9,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByZip: function(req, res) {
+  findById: function(req, res) {
     db.Review
-      .findByZip(req.params.address.zipcode)
+      .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByCity: function(req, res) {
-    db.Review
-      .findByCity(req.params.address.city)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
+  // findByCity: function(req, res) {
+  //   db.Review
+  //     .findByCity(req.params.city)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
   create: function(req, res) {
     db.Review
       .create(req.body)

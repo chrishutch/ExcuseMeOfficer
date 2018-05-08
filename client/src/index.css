@@ -1,27 +1,19 @@
+
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body,
 #root,
 div[data-reactroot] {
-  height: 100%;
-  padding: 0;
-  margin: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-a {
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 0 3px #000000;
-}
 
-a:hover {
-    color: white;
-    font-weight: bolder;
-    text-shadow: 0 0 3px #000000;
-    }
 
 label {
     color: white;
@@ -29,7 +21,29 @@ label {
     text-shadow: 0 0 3px #000000;
 }
 
-.navLogo {
+
+#navbarSupportedContent {
+    float: right;
+    text-align: right;
+    margin-left: 5%;
+}
+
+/*Search Button and Input Size CSS*/
+
+#searchsubmit {
+    width: 80px;
+    border: 1px solid grey;
+}
+
+#homesearch {
+    height: 50px;
+    border: 1px solid grey;
+}
+
+
+/*Navbar CSS*/
+
+#navLogo {
     width: 200px;
     height: 80px;
 }
@@ -39,17 +53,6 @@ label {
     text-align: right;
 }
 
-#navbarSupportedContent {
-    float: right;
-    text-align: right;
-    margin-left:5%;
-}
-
-ul {
-    float: right;
-    text-align: right;
-    margin-top: 7%;
-}
 
 .navbar-nav {
     float: right;
@@ -61,11 +64,9 @@ ul {
     text-align: right;
 }
 
-li {
-    float: right;
+.navbar li {
     text-align: right;
-    margin-right: 10px;
-    font-size: 17px;
+    font-size: 15px;
     margin: 9px;
 }
 
@@ -84,23 +85,77 @@ li {
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
+    border: 2px solid white;
+}
+
+    #signup:hover {
+        border: 2px solid white;
+        background-color: white;
+    }
+
+
+
+
+/*Footer CSS*/
+
+footer {
+    color: white;
+    background-color: #99D092;
+    bottom: 0;
     overflow: hidden;
-    border: 2px solid white;
 }
 
-#signup:hover {
-    border: 2px solid white;
-    background-color: white;
-
+.page-footer {
+    text-shadow: 1px 0px 1px #000000;
+    border-top: 1px solid black;
+    font-family: 'Arial';
 }
 
-.search-container button {
-    float: left;
-    padding: 10px 15px;
-    margin-right: 16px;
-    background: #00ff90;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
+    .page-footer h5 {
+        color: #375b60;
+        text-shadow: 1px 2px 2px #FFFFFF;
+    }
+
+.footer-copyright {
+    border-top: 1px solid gray;
+    background-color: #375b60;
+    font-weight: bolder;
 }
 
+.footer-copyright-text {
+    margin-right: 5%;
+}
+
+.page-footer a {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 3px #000000;
+    bottom: 0;
+}
+
+
+    .page-footer a:hover {
+        color: white;
+        font-weight: bolder;
+        text-shadow: 0 0 3px #000000;
+    }
+
+
+
+
+
+/*Review Page CSS*/
+
+.searchresults {
+    background-color: indianred;
+    padding-bottom: 5%;
+}
+
+.reviewpane {
+    background-color: lightgreen;
+    height: 250px;
+}
+
+.mappane {
+    background-color: mediumpurple;
+}

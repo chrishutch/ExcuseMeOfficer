@@ -8,5 +8,6 @@ export * from "./State";
 export * from "./Zip";
 export * from "./Evidence";
 export * from "./Witness";
-export * from "./DateTime";
+export * from "./DateCollected";
+export * from "./TimeCollected";
 export * from "./Rating";
