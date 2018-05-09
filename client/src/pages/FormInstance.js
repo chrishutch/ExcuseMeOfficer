@@ -16,10 +16,10 @@ class Reviews extends Component {
       officerName: "",
       officerBadge: "",
       ticketNumber: "",
-      // witness: "",
-      // evidence: "",   
+      witness: "",
+      evidence: "",   
       experience: "",
-      // rating: "",
+      rating: "",
       feedback: ""
   };
 
@@ -30,7 +30,7 @@ class Reviews extends Component {
   loadReviews = () => {
     API.getReviews()
       .then(res =>
-        this.setState({ reviews: res.data, date: "", time: "", street: "", city: "", state:"IL", zipcode: "", officerName: "", officerBadge: "", ticketNumber: "", experience: "", feedback: "" }))
+        this.setState({ reviews: res.data, date: "", time: "", street: "", city: "", state:"IL", zipcode: "", officerName: "", officerBadge: "", ticketNumber: "", experience: "", feedback: "", rating: "", witness: "" }))
       .catch(err => console.log(err));
   };
 
@@ -52,10 +52,10 @@ class Reviews extends Component {
         state: this.state.state,
         zipcode: this.state.zipcode,
         experience: this.state.experience,
-        // rating: this.state.rating,
+        rating: this.state.rating,
         feedback: this.state.feedback,
-        // evidence: this.state.evidence,
-        // witness: this.state.witness,
+        evidence: this.state.evidence,
+        witness: this.state.witness,
         officerName: this.state.officerName,
         officerBadge: this.state.officerBadge,
         ticketNumber: this.state.ticketNumber 
@@ -172,7 +172,7 @@ class Reviews extends Component {
               />
               <br/>
               <FormBtn
-                disabled={!(this.state.city && this.state.feedback)}
+                // disabled={!(this.state.city && this.state.feedback)}
                 onClick={this.handleFormSubmit}
 
               >

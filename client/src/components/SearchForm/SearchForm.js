@@ -1,41 +1,153 @@
 import React from "react";
+import PlacesAutocomplete, { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete';
+import { classnames } from './helpers';
 import "./SearchForm.css";
 
-// Using the datalist element we can create autofill suggestions based on the props.breeds array
-const SearchForm = props =>
+class SearchForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      address: '',
+      errorMessage: '',
+      latitude: null,
+      longitude: null,
+      isGeocoding: false,
+    };
+  }
 
-       <div className="search-container">
-        <form className="col-lg-16">
-            <label htmlFor="breed"></label>
-            <div className="input-group mb-3">
-                <input
-                    value={props.search}
-                    onChange={props.handleInputChange}
-                    name="breed"
-                    list="breeds"
-                    type="text"
-                    className="form-control"
-                    placeholder="Search by Zip Code"
-                    id="homesearch"
-                    aria-describedby="basic-addon2"
-                />
-                <div className="input-group-append">
+  handleChange = address => {
+    this.setState({
+      address,
+      latitude: null,
+      longitude: null,
+      errorMessage: '',
+    });
+  };
+
+  handleSelect = selected => {
+    this.setState({ isGeocoding: true });
+    geocodeByAddress(selected)
+      .then(res => getLatLng(res[0]))
+      .then(({ lat, lng }) => {
+        this.setState({
+          latitude: lat,
+          longitude: lng,
+          isGeocoding: false,
+        });
+      })
+      .catch(error => {
+        this.setState({ isGeocoding: false });
+        console.log('error', error);
+      });
+  };
+
+  handleCloseClick = () => {
+    this.setState({
+      address: '',
+      latitude: null,
+      longitude: null,
+    });
+  };
+
+  handleError = (status, clearSuggestions) => {
+    console.log('Error from Google Maps API', status);
+    this.setState({ errorMessage: status }, () => {
+      clearSuggestions();
+    });
+  };
+
+  render() {
+    const {
+      address,
+      errorMessage,
+      latitude,
+      longitude,
+      isGeocoding,
+    } = this.state;
+
+    return (
+      <div>
+        <PlacesAutocomplete
+          onChange={this.handleChange}
+          value={address}
+          onSelect={this.handleSelect}
+          onError={this.handleError}
+          shouldFetchSuggestions={address.length > 2}
+        >
+          {({ getInputProps, suggestions, getSuggestionItemProps }) => {
+            return (
+              <div className="search-bar-container">
+                <div className="search-input-container">
+                  <input
+                    {...getInputProps({
+                      placeholder: 'Search by Zip Code',
+                      className: 'search-input',
+                    })}
+                  />
+                  {this.state.address.length > 0 && (
                     <button
-                        type="submit"
-                        onClick={props.handleFormSubmit}
-                        className="btn btn-success"
-                        id="searchsubmit">
-                        <i className="fa fa-search fa-lg"></i>
+                      className="clear-button"
+                      onClick={this.handleCloseClick}
+                    >
+                      x
                     </button>
+                  )}
                 </div>
-            </div>
+                {suggestions.length > 0 && (
+                  <div className="autocomplete-container">
+                    {suggestions.map(suggestion => {
+                      const className = classnames('suggestion-item', {
+                        'suggestion-item--active': suggestion.active,
+                      });
 
+                      return (
+                        <div
+                          {...getSuggestionItemProps(suggestion, { className })}
+                        >
+                          <strong>
+                            {suggestion.formattedSuggestion.mainText}
+                          </strong>{' '}
+                          <small>
+                            {suggestion.formattedSuggestion.secondaryText}
+                          </small>
+                        </div>
+                      );
+                    })}
 
+                  </div>
+                )}
+              </div>
+            );
+          }}
+        </PlacesAutocomplete>
+        {errorMessage.length > 0 && (
+          <div className="error-message">{this.state.errorMessage}</div>
+        )}
 
-
-
-        </form>
-
-    </div>;
+        {((latitude && longitude) || isGeocoding) && (
+          <div>
+            <h3 className="geocode-result-header">Geocode result</h3>
+            {isGeocoding ? (
+              <div>
+                <i className="fa fa-spinner fa-pulse fa-3x fa-fw spinner" />
+              </div>
+            ) : (
+              <div>
+                <div className="geocode-result-item--lat">
+                  <label>Latitude:</label>
+                  <span>{latitude}</span>
+                </div>
+                <div className="geocode-result-item--lng">
+                  <label>Longitude:</label>
+                  <span>{longitude}</span>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
 export default SearchForm;
