@@ -34,12 +34,12 @@ const App = () =>
         {/*    Review Page     */}
         <Route exact path="/reviews" component={Navbar} />
         <Route exact path="/reviews" component={Review} />
-<<<<<<< HEAD
+
     {/*    Thank you Page     */}
-=======
+
 
         {/*    Thank you Page     */}
->>>>>>> 484a60a57b3d0e009c2b425e16d99cdd1490edee
+
         <Route exact path="/thankyou" component={Navbar} />
         <Route exact path="/thankyou" component={ThankYou} />
 

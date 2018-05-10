@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Ratings.css";
 
 
-export default class Rating extends Component {
+class Rating extends Component {
 
 	handleInputChange = event => {
 	    const { name, value } = event.target;
@@ -21,3 +21,4 @@ export default class Rating extends Component {
 		);
 	}
 } 
+export default Rating;
