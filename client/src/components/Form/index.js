@@ -10,4 +10,4 @@ export * from "./Evidence";
 export * from "./Witness";
 export * from "./DateCollected";
 export * from "./TimeCollected";
-export * from "./Rating";
+export {default} from "./Rating";

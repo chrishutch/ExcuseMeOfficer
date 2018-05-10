@@ -32,8 +32,8 @@ const App = () =>
         <Route exact path="/form" component={FormInstance} />
 
         {/*    Review Page     */}
-        <Route exact path="/search" component={Navbar} />
-        <Route exact path="/search" component={Review} />
+        <Route exact path="/reviews" component={Navbar} />
+        <Route exact path="/reviews" component={Review} />
     {/*    Thank you Page     */}
         <Route exact path="/thankyou" component={Navbar} />
         <Route exact path="/thankyou" component={ThankYou} />

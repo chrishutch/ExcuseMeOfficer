@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Evidence, Witness, DateCollected, TimeCollected, Rating } from "../components/Form";
 
+import { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Evidence, Witness, DateCollected, TimeCollected} from "../components/Form";
+import { Rating } from "../components/Form/Rating.js";
 class Reviews extends Component {
   state = {
       reviews: [],
@@ -14,11 +15,11 @@ class Reviews extends Component {
       state: "",
       zipcode: "",
       officerName: "",
-      officerBadge: "",
+      officerBadge: "", 
+      experience: "",
       ticketNumber: "",
       witness: "",
       evidence: "",   
-      experience: "",
       rating: "",
       feedback: ""
   };
@@ -60,7 +61,7 @@ class Reviews extends Component {
         officerBadge: this.state.officerBadge,
         ticketNumber: this.state.ticketNumber 
       })
-        .then(res => this.loadReviews())
+        .then(/*window.location.href={ThankYou}*/)
         .catch(err => console.log(err));
     }
   };
@@ -120,11 +121,8 @@ class Reviews extends Component {
                 name="experience"
               />
               <h5>Rate your experience.</h5>
-              <Rating 
-                value={this.state.rating}
-                onChange={this.handleInputChange}
-                name="rating"
-              />
+              {/*<Rating/>*/}
+              <Rating/>
               <br/>
               <br/>
               <h5>What happened?</h5>
