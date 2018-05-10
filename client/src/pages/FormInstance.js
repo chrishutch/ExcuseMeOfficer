@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 
 import { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Evidence, Witness, DateCollected, TimeCollected} from "../components/Form";
-import { Rating } from "../components/Form/Rating.js";
+import { Rating } from "../components/Form/Rating";
 class Reviews extends Component {
   state = {
       reviews: [],

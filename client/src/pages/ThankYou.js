@@ -1,55 +1,28 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import API from "../utils/API";
+import React from "react";
+import Hero from "../components/Hero";
+import Container from "../components/Container";
+import Row from "../components/Row";
+import Col from "../components/Col";
 
-class ThankYou extends Component {
-  state = {
-    review: {}
-  };
+const About = () =>
+    <div>
+        <div className="thankyoubody">
+            <div className="thankyoucontent">
+                <div className="thankyou-1">
+                    <div className="thankyou-2">
+                        <h1>Thank you !</h1>
+                        <p>Thanks for your feedback.  </p>
+                        <p>you should receive a confirmation email soon.</p>
+                        <button className="go-home">go home</button>
+                    </div>
+                <div className="thankyou-footer">
+                <p>Email not received?
+                <a href="#">Click here to send again</a>
+                </p>
+            </div>
+         </div>
+        </div>
+    </div>
+  </div>;
 
-  componentDidMount() {
-    API.getReview(this.props.match.params.id)
-      .then(res => this.setState({ review: res.data }))
-      .catch(err => console.log(err));
-  }
-
-  render() {
-    return (
-  <Container fluid>
-    <Row>
-      <Col size="md-12">
-          <h1>Thank you for your feedback!</h1>
-      </Col>
-    </Row>
-
-        <Row>
-          <Col size="md-12">
-            
-              <h1>
-                {this.state.review.experience} in {this.state.review.city}
-              </h1>
-    
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Feedback</h1>
-              <p>
-                {this.state.review.feedback}
-              </p>
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back Home</Link>
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
-}
-
-export default ThankYou;
+export default About;
