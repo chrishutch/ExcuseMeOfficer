@@ -81,7 +81,7 @@ class SearchForm extends React.Component {
                   <input
                     {...getInputProps({
                       placeholder: 'Search by Zip Code',
-                      className: 'search-input',
+                      className: 'search-input form-control',
                     })}
                   />
                   {this.state.address.length > 0 && (

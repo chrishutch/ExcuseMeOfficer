@@ -168,7 +168,6 @@ footer {
 
 .thankyoubody {
     background: #ffffff;
-    background: linear-gradient(to bottom, #ffffff 0%,#e1e8ed 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e8ed',GradientType=0 );
     height: 100%;
     margin: 0;
@@ -182,6 +181,10 @@ footer {
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+.thankyoubody button {
+    margin:2%
 }
 
 .thankyoubody a {
@@ -214,7 +217,18 @@ footer {
 .go-home {
     color: #fff;
     background: #99D092;
-        border: none;
+    border: none;
+    padding: 10px 50px;
+    margin: 30px 0;
+    border-radius: 30px;
+    text-transform: capitalize;
+    box-shadow: 0 10px 16px 1px rgb(60, 179, 113);
+}
+
+.police-guide {
+    color: #fff;
+    background: #375B60;
+    border: none;
     padding: 10px 50px;
     margin: 30px 0;
     border-radius: 30px;
