@@ -37,21 +37,19 @@ const App = () =>
         <Route exact path="/form" component={Footer} />
 
         {/*    Review Page     */}
-        <Route exact path="/reviews" component={Navbar} />
-        <Route exact path="/reviews" component={Review} />
-        <Route exact path="/reviews" component={Footer} />
+        <Route exact path="/review" component={Navbar} />
+        <Route exact path="/review" component={Review} />
+        <Route exact path="/review" component={Footer} />
 
         {/*    Thank you Page     */}
-
         <Route exact path="/thankyou" component={Navbar} />
         <Route exact path="/thankyou" component={ThankYou} />
         <Route exact path="/thankyou" component={Footer} />
 
-        {/*    Thank you Page     */}
-
-        <Route exact path="/Guide" component={Navbar} />
-        <Route exact path="/Guide" component={Guide} />
-        <Route exact path="/Guide" component={Footer} />
+        {/*    Guide to Police Stops Page  */}
+        <Route exact path="/guide" component={Navbar} />
+        <Route exact path="/guide" component={Guide} />
+        <Route exact path="/guide" component={Footer} />
 
     </Wrapper>
     </div>

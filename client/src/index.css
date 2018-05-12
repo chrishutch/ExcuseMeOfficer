@@ -30,19 +30,19 @@ label {
 
 /*Search Button and Input Size CSS*/
 
-#searchsubmit {
-    width: 80px;
-    border: 1px solid grey;
-}
 
 #homesearch {
     height: 50px;
-    border: 1px solid grey;
+    border: 2px solid #375B60;
 }
 
+#homesearchbutton {
+    background-color: #99D092;
+    width: 80px;
+    border: 2px solid #375B60;
+}
 
 /*Navbar CSS*/
-
 #navLogo {
     width: 200px;
     height: 80px;
