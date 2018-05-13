@@ -4,7 +4,7 @@ import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
 
-const About = () =>
+const ThankYou = () =>
     <div>
         <div className="thankyoubody">
             <div className="thankyoucontent">
@@ -13,16 +13,14 @@ const About = () =>
                         <h1>Thank you !</h1>
                         <p>Thanks for your feedback.  </p>
                         <p>you should receive a confirmation email soon.</p>
-                        <button className="go-home">go home</button>
+                        <a href="/"><button className="go-home">go home</button></a>
+                        <a href="/"><button className="police-guide">Police Guide</button></a>
                     </div>
                 <div className="thankyou-footer">
-                <p>Email not received?
-                <a href="#">Click here to send again</a>
-                </p>
             </div>
          </div>
         </div>
     </div>
   </div>;
 
-export default About;
+export default ThankYou;

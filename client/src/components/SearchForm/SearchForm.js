@@ -77,21 +77,26 @@ class SearchForm extends React.Component {
           {({ getInputProps, suggestions, getSuggestionItemProps }) => {
             return (
               <div className="search-bar-container">
-                <div className="search-input-container">
+                    <div className="search-input-container">
+                        <div className="input-group mb-3">
                   <input
                     {...getInputProps({
                       placeholder: 'Search by Zip Code',
-                      className: 'search-input',
+                      className: 'search-input form-control',
+                      id:"homesearch"
                     })}
                   />
                   {this.state.address.length > 0 && (
-                    <button
-                      className="clear-button"
-                      onClick={this.handleCloseClick}
+                 <div class="input-group-append">
+                    <button id="homesearchbutton"
+                    className="btn btn-success form-control"
+                    onClick={this.handleFormSubmit}
                     >
-                      x
+                    <i class="fa fa-search fa-md"></i>
                     </button>
-                  )}
+                    </div>
+                        )}
+                        </div>
                 </div>
                 {suggestions.length > 0 && (
                   <div className="autocomplete-container">

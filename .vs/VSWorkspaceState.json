@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\client",
+    "\\client\\public",
+    "\\client\\src",
+    "\\client\\src\\components",
+    "\\client\\src\\components\\Form",
+    "\\client\\src\\components\\News",
+    "\\client\\src\\components\\Row",
+    "\\client\\src\\components\\SearchForm",
+    "\\client\\src\\pages"
+  ],
+  "SelectedNode": "\\client\\src\\pages\\FormInstance.js",
+  "PreviewInSolutionExplorer": false
+}

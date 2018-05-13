@@ -15,17 +15,6 @@ const Navbar = props =>
             <form id="searchnav">
             <div className="input-group">          
                     <SearchForm/>
-                    <div className="input-group-append">
-               
-                        <button
-                            type="submit"
-                            onClick={props.handleFormSubmit}
-                            className="btn btn-success"
-                            id="searchsubmit">
-                            <i className="fa fa-search"></i>
-                        </button>
-               
-                    </div>   
             </div>
             </form>
 

@@ -60,8 +60,8 @@ var sectionStyle = {
               {/*End Navbar*/}
               <br /><br /><br /><br />
 
-      <Container style={{ minHeight: "80%" }}>
-                  <h1 className="text-center"><img src={require('../images/3.png')} width="500px" height="110px"/></h1>
+      <Container style={{ minHeight: "95%" }}>
+                  <h1 className="text-center"><img src={require('../images/4.png')} width="300px" height="220px"/></h1>
 
         <SearchForm/>
   
