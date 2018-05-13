@@ -25,7 +25,7 @@ var sectionStyle = {
 
                               <li
                                   className={window.location.pathname === "/form" ? "active" : ""}>
-                                  <Link to="/form">Write a Review</Link>
+                                  <Link to="/forms">Write a Review</Link>
                               </li>
                               <li
                                   className={

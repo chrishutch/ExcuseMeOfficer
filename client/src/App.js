@@ -9,6 +9,7 @@ import Wrapper from "./components/Wrapper";
 import News from "./components/News/News.js";
 import FormInstance from "./pages/FormInstance";
 import ThankYou from "./pages/ThankYou";
+import Form from "./pages/Form";
 
 
 const App = () =>
@@ -35,13 +36,11 @@ const App = () =>
         <Route exact path="/reviews" component={Navbar} />
         <Route exact path="/reviews" component={Review} />
 
-    {/*    Thank you Page     */}
-
-
         {/*    Thank you Page     */}
-
         <Route exact path="/thankyou" component={Navbar} />
         <Route exact path="/thankyou" component={ThankYou} />
+         <Route exact path="/forms" component={Navbar} />
+        <Route exact path="/forms" component={Form} />
 
     </Wrapper>
     <Footer />
