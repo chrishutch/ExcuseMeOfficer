@@ -283,3 +283,24 @@ footer {
 }
 
 /*Guide to Police Page CSS*/
+/* .main{
+    width:200px;
+} */
+.card {
+    width: 40%;
+    margin: 20px;
+    float: left;
+    height: 100%;
+  }
+  .card h2 {
+    padding: 40px;
+    color:#18b362;
+    font-family:  Courier, monospace;
+    font-weight: bold;
+  }
+
+  .guideHead {
+    color:#18b362;
+    font-family: Courier, monospace;
+    font-weight: bold;
+  }
