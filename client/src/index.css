@@ -11,6 +11,7 @@ div[data-reactroot] {
     height: 100%;
     padding: 0;
     margin: 0;
+    background-color:#F7F5EA;
 }
 
 
@@ -168,7 +169,6 @@ footer {
 
 .thankyoubody {
     background: #ffffff;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e8ed',GradientType=0 );
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -280,13 +280,28 @@ footer {
         margin-top: 50px;
         box-shadow: 4px 8px 40px 8px rgba(88, 146, 255, 0.2);
     }
-}
 
-/*Guide to Police Page CSS*/
-/* .main{
-    width:200px;
-} */
-.card {
+
+    .newscard {
+        border: 1px solid #375B60;
+
+    }
+
+     .newscard img{
+        border: 1px solid #375B60;
+
+    }
+
+    .card-body {
+    
+    }
+
+    .writereviewbtn {
+        background-color:#99D092;
+    }
+
+
+.guidecard {
     width: 40%;
     margin: 20px;
     float: left;
@@ -294,13 +309,18 @@ footer {
   }
   .card h2 {
     padding: 40px;
-    color:#18b362;
+    color:#99D092;
     font-family:  Courier, monospace;
     font-weight: bold;
   }
 
   .guideHead {
-    color:#18b362;
+    color:#99D092;
     font-family: Courier, monospace;
     font-weight: bold;
   }
+
+
+}
+
+/*Guide to Police Page CSS*/

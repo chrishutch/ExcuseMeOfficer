@@ -14,7 +14,7 @@ const About = () =>
                         <p>Thanks for your feedback.  </p>
                         <p>you should receive a confirmation email soon.</p>
                         <a href="/"><button className="go-home">go home</button></a>
-                        <a href="/"><button className="police-guide">Police Guide</button></a>
+                        <a href="/guide"><button className="police-guide">Police Guide</button></a>
                     </div>
                 <div className="thankyou-footer">
             </div>

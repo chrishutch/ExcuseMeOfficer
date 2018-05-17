@@ -19,7 +19,7 @@ const Guide = () =>
          </div>   
             <br />
             <div class="container">
-        <div class="card">
+        <div class="card guidecard">
             <h2>1.Acknowledge the officer.</h2>
             <img className="card-img-top" src={require('../images/card1.jpg')} width="100px" height="300px" />
             <div className="card-body">
@@ -29,7 +29,7 @@ const Guide = () =>
                 </p>
             </div>
         </div>
-        <div class="card">
+        <div class="card guidecard">
             <h2>2. Keep Calm and Polite.</h2>
             <img class="card-img-top" src={require('../images/card2.jpg')}/> 
             <div class="card-body">
@@ -38,7 +38,7 @@ const Guide = () =>
                 </p>
             </div>
         </div>
-        <div class="card">
+        <div class="card guidecard">
             <h2>3. Keep your identification Handy.</h2>
             <img class="card-img-top" src={require('../images/card3.png')} width="100px" height="300px"/>
             <div class="card-body">
@@ -49,7 +49,7 @@ const Guide = () =>
                 </p>
             </div>
         </div>
-        <div class="card">
+        <div class="card guidecard">
             <h2>4. Remain Silent as much as Possible.</h2>
             <img class="card-img-top" src={require('../images/card4.jpg')} width="100px" height="300px"/>
             <div class="card-body">
@@ -59,7 +59,7 @@ const Guide = () =>
                 </p>
             </div>
         </div>
-        <div class="card">
+        <div class="card guidecard">
             <h2>5. Do Not Consent to a Search.</h2>
             <img class="card-img-top"src={require('../images/card5.png')}width="100px" height="300px"/> 
             <div class="card-body">
@@ -80,7 +80,7 @@ const Guide = () =>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card guidecard">
             <h2>5. Move deliberately</h2>
             <img class="card-img-top"src={require('../images/card6.jpg')}width="100px" height="300px"/> 
             <div class="card-body">
