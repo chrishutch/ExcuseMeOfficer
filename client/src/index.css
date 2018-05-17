@@ -11,10 +11,8 @@ div[data-reactroot] {
     height: 100%;
     padding: 0;
     margin: 0;
-    background-color:#F7F5EA;
+    background-color: #F7F5EA;
 }
-
-
 
 label {
     color: white;
@@ -26,7 +24,7 @@ label {
 #navbarSupportedContent {
     float: right;
     text-align: right;
-    margin-left: 5%;
+    margin-left: 0%;
 }
 
 /*Search Button and Input Size CSS*/
@@ -168,12 +166,12 @@ footer {
 
 
 .thankyoubody {
-    background: #ffffff;
+    background: #F7F5EA;
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin-bottom:5%;
+    margin-bottom: 5%;
 }
 
 .thankyou-1 {
@@ -195,6 +193,7 @@ footer {
 .thankyou-2 {
     padding: 30px;
     text-align: center;
+    background: #FFFFFF;
 }
 
     .thankyou-2 h1 {

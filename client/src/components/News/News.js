@@ -2,13 +2,8 @@ import React from "react";
 import Container from "../Container";
 import Row from "../Row";
 import Col from "../Col";
-
-const docs = window.docs;
-const article = window.article;
 var request = require("request");
-const body = window.body;
-const headline = window.headline;
-const response = window.response;
+
 
 class News extends React.Component {
 
@@ -45,11 +40,6 @@ class News extends React.Component {
     }
 
     render() {
-
-
-        console.log("test");
-        console.log(body);
-        console.log(article);
 
         return (
 
