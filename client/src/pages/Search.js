@@ -67,7 +67,7 @@ const Search = () => (
   
 
       <Container style={{ minHeight: "95%" }}>
-                <h1 className="text-center"><img src={require('../images/spin.gif')} width="350px" height="250px"/></h1>
+                <h1 className="text-center"><img src={require('../images/spin3.gif')} width="350px" height="250px"/></h1>
 
         <SearchForm/>
   
