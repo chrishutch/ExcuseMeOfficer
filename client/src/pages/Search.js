@@ -9,12 +9,14 @@ var sectionStyle = {
     width: "100%",
     backgroundSize: 'cover',
     overflow: 'hidden',
-    height: "600px",
-    backgroundImage: `url(${Background})`
+    height: "600px"
+
 
 };
 
-  const Search = () => (
+
+const Search = () => (
+
           /*Navbar*/
           <section style={sectionStyle}>
               <div className="homeContainer" id="homeContainer">
@@ -57,11 +59,15 @@ var sectionStyle = {
                   </nav>
                        
 
-              {/*End Navbar*/}
-              <br /><br /><br /><br />
+                  {/*End Navbar*/}
+
+                  <br /><br />
+
+
+  
 
       <Container style={{ minHeight: "95%" }}>
-                  <h1 className="text-center"><img src={require('../images/4.png')} width="300px" height="220px"/></h1>
+                <h1 className="text-center"><img src={require('../images/spin3.gif')} width="350px" height="250px"/></h1>
 
         <SearchForm/>
   
