@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Container from "../components/Container";
 import SearchForm from "../components/SearchForm";
-import Background from '../images/images5.jpg';
+import Background from '../images/4.png';
 import { Link } from "react-router-dom";
 
 var sectionStyle = {
@@ -67,7 +67,7 @@ const Search = () => (
   
 
       <Container style={{ minHeight: "95%" }}>
-                <h1 className="text-center"><img src={require('../images/spin3.gif')} width="350px" height="250px"/></h1>
+                <h1 className="text-center"><img src={require('../images/4.png')} width="350px" height="250px"/></h1>
 
         <SearchForm/>
   

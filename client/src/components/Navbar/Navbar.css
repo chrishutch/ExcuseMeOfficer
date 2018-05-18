@@ -8,13 +8,16 @@
     box-sizing: border-box;
 }
 
+.secondnav {
+    background: #F7F5EA;
+}
 
 #searchsubmit {
 }
 
 #navbar navbar-secondary {
     border-top: 1px solid black;
-    height: 5%;
+    height: 10%;
 
 }
 
@@ -23,12 +26,6 @@
     margin-left:0%;
 
   
-}
-
-#navcontainer {
-
-    background-color:aquamarine;
-
 }
 
 #form1 {
@@ -70,10 +67,12 @@
     }
 
 
-.navsecond {
 
+navbar {
+    background-color: #F7F5EA;
 }
 
-#searchnav {
- 
+#nav {
+    background-color: #F7F5EA;
 }
+

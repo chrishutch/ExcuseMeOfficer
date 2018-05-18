@@ -48,8 +48,8 @@ class News extends React.Component {
 
                 <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
                     <div class="col-md-6 px-0">
-                        <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-                        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+                        <h1 class="display-4 font-italic">Write an Officer Review.</h1>
+                        <p class="lead my-3">Leave a Review and Help Create Accountability for Officer Conduct.</p>
                         <button type="button" class="btn btn-light btn-lg writereviewbtn"><a href="#" class="text-white font-weight-bold">Write a Review</a></button>
                     </div>
                 </div>

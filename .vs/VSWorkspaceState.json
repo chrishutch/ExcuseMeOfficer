@@ -5,12 +5,12 @@
     "\\client\\public",
     "\\client\\src",
     "\\client\\src\\components",
+    "\\client\\src\\components\\Footer",
     "\\client\\src\\components\\Form",
     "\\client\\src\\components\\News",
     "\\client\\src\\components\\Row",
-    "\\client\\src\\components\\SearchForm",
-    "\\client\\src\\pages"
+    "\\client\\src\\components\\SearchForm"
   ],
-  "SelectedNode": "\\client\\src\\pages\\FormInstance.js",
+  "SelectedNode": "\\client\\src\\components\\Form\\Rating.js",
   "PreviewInSolutionExplorer": false
 }
