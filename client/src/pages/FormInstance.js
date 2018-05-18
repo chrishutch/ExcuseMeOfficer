@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Rating, { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Evidence, Witness, DateCollected, TimeCollected } from "../components/Form";
+import Rating, { Input, TextArea, FormBtn, Address, State, City, FormRow, Zip, Witness, DateCollected, Evidence, TimeCollected } from "../components/Form";
 
 class Reviews extends Component {
   state = {
@@ -20,17 +19,26 @@ class Reviews extends Component {
       witness: "",
       evidence: "",   
       rating: "",
+      filename: "",
       feedback: ""
   };
 
   componentDidMount() {
     this.loadReviews();
+    document.getElementById("customFile").onchange = () => {
+    const files = document.getElementById('customFile').files;
+    const file = files[0];
+    if(file == null){
+      return alert('No file selected.');
+    }
+    this.getSignedRequest(file);
+  };
   }
 
   loadReviews = () => {
     API.getReviews()
       .then(res =>
-        this.setState({ reviews: res.data, date: "", time: "", street: "", city: "", state:"IL", zipcode: "", officerName: "", officerBadge: "", ticketNumber: "", experience: "", feedback: "", rating: "", witness: "" }))
+        this.setState({ reviews: res.data, date: "", time: "", street: "", city: "", state:"IL", zipcode: "", officerName: "", officerBadge: "", ticketNumber: "", experience: "", filename: "", feedback: "", rating: "", witness: "" }))
       .catch(err => console.log(err));
   };
 
@@ -41,8 +49,46 @@ class Reviews extends Component {
     });
   };
 
+getSignedRequest=(file)=>{
+  console.log("getSignedRequest")
+  console.log(file)
+  this.setState({filename: file.name})
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
+  xhr.onreadystatechange = () => {
+    if(xhr.readyState === 4){
+      if(xhr.status === 200){
+        const response = JSON.parse(xhr.responseText);
+        this.uploadFile(file, response.signedRequest, response.url);
+      }
+      else{
+        alert('Could not get signed URL.');
+      }
+    }
+  };
+  xhr.send();
+}
+uploadFile(file, signedRequest, url){
+  console.log(file.name)
+  const xhr = new XMLHttpRequest();
+  xhr.open('PUT', signedRequest);
+  xhr.onreadystatechange = () => {
+    if(xhr.readyState === 4){
+      if(xhr.status === 200){
+        // document.getElementById('preview').src = url;
+        // document.getElementById('avatar-url').value = url;
+      }
+      else{
+        alert('Could not upload file.');
+      }
+    }
+  };
+  xhr.send(file);
+}
   handleFormSubmit = event => {
+    console.log("handleFormSubmit")
     event.preventDefault();
+    
     if (this.state.feedback && this.state.city) {
       API.saveReview({
         date: this.state.date,
@@ -60,12 +106,15 @@ class Reviews extends Component {
         officerBadge: this.state.officerBadge,
         ticketNumber: this.state.ticketNumber 
       })
-        .then(console.log(this.state))
+        .then(something => {
+          this.props.history.push("/thankyou")
+        })
         .catch(err => console.log(err));
     }
   };
 
   render() {
+    console.log(this.state)
     return (
       <div>
       <Container fluid>
@@ -120,7 +169,11 @@ class Reviews extends Component {
                 name="experience"
               />
               <h5>Rate your experience.</h5>
-              <Rating/>
+              <Rating
+                name="rating"
+                onChange={this.handleInputChange}
+                value={this.state.rating}
+              />
               <br/>
               <br/>
               <h5>What happened?</h5>
@@ -132,9 +185,8 @@ class Reviews extends Component {
                 placeholder="Excuse me officer, ..."
               />
               <Evidence
-                value={this.state.evidence}
-                onChange={this.handleInputChange}
-                name="evidence"
+              name="filename"
+              value={this.state.filename}
               />
               
               <br/>

@@ -200,11 +200,12 @@ function validOptions(options) {
  * @param {number} [options.numberOfRetries=5] The number of retries for a tailable cursor
  * @param {boolean} [options.auto_reconnect=true] Enable auto reconnecting for single server instances
  * @param {boolean} [options.monitorCommands=false] Enable command monitoring for this client
+ * @param {number} [options.minSize] If present, the connection pool will be initialized with minSize connections, and will never dip below minSize connections
  * @param {MongoClient~connectCallback} [callback] The command result callback
  * @return {MongoClient} a MongoClient instance
  */
 function MongoClient(url, options) {
-  if (!(this instanceof MongoClient)) return new MongoClient();
+  if (!(this instanceof MongoClient)) return new MongoClient(url, options);
 
   // Set up event emitter
   EventEmitter.call(this);
@@ -465,6 +466,7 @@ MongoClient.prototype.isConnected = function(options) {
  * @param {array} [options.readPreferenceTags=null] Read preference tags
  * @param {number} [options.numberOfRetries=5] The number of retries for a tailable cursor
  * @param {boolean} [options.auto_reconnect=true] Enable auto reconnecting for single server instances
+ * @param {number} [options.minSize] If present, the connection pool will be initialized with minSize connections, and will never dip below minSize connections
  * @param {MongoClient~connectCallback} [callback] The command result callback
  * @return {Promise<MongoClient>} returns Promise if no callback passed
  */

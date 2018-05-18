@@ -10,13 +10,13 @@ const reviewSchema = new Schema({
 	zipcode: String,
 	county: String,
 	country: String,
+  filename: String,
   officerName: String,
   officerBadge: String,
   ticketNumber: String,
   experience: String,
   rating: String,
   feedback: String,
-  hidden: Boolean,
   // _userId: {
   // 	type: Schema.Types.ObjectId,
   // 	ref: "Users"

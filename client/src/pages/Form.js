@@ -10,8 +10,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const onSubmit = async values => {
   await sleep(300)
-      API.saveReview(values);
-
+      API.saveReview(values)
     }
 
 

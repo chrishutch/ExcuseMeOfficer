@@ -1,6 +1,8 @@
 import React from "react";
 import PlacesAutocomplete, { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete';
 import { classnames } from './helpers';
+import { BrowserRouter, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import "./SearchForm.css";
 
 class SearchForm extends React.Component {
@@ -27,18 +29,19 @@ class SearchForm extends React.Component {
   handleSelect = selected => {
     this.setState({ isGeocoding: true });
     geocodeByAddress(selected)
-      .then(res => getLatLng(res[0]))
-      .then(({ lat, lng }) => {
-        this.setState({
-          latitude: lat,
-          longitude: lng,
-          isGeocoding: false,
-        });
-      })
-      .catch(error => {
-        this.setState({ isGeocoding: false });
-        console.log('error', error);
-      });
+    window.location.href = "/reviews/il/" + selected;
+      // .then(res => getLatLng(res[0]))
+      // .then(({ lat, lng }) => {
+      //   this.setState({
+      //     latitude: lat,
+      //     longitude: lng,
+      //     isGeocoding: false,
+      //   });
+      // })
+      // .catch(error => {
+      //   this.setState({ isGeocoding: false });
+      //   console.log('error', error);
+      // });
   };
 
   handleCloseClick = () => {
@@ -64,7 +67,7 @@ class SearchForm extends React.Component {
       longitude,
       isGeocoding,
     } = this.state;
-
+console.log(this.state)
     return (
       <div>
         <PlacesAutocomplete
@@ -87,12 +90,12 @@ class SearchForm extends React.Component {
                     })}
                   />
                   {this.state.address.length > 0 && (
-                 <div class="input-group-append">
+                 <div className="input-group-append">
                     <button id="homesearchbutton"
                     className="btn btn-success form-control"
                     onClick={this.handleFormSubmit}
                     >
-                    <i class="fa fa-search fa-md"></i>
+                    <i className="fa fa-search fa-md"></i>
                     </button>
                     </div>
                         )}
@@ -129,7 +132,7 @@ class SearchForm extends React.Component {
           <div className="error-message">{this.state.errorMessage}</div>
         )}
 
-        {((latitude && longitude) || isGeocoding) && (
+       {/* {((latitude && longitude) || isGeocoding) && (
           <div>
             <h3 className="geocode-result-header">Geocode result</h3>
             {isGeocoding ? (
@@ -147,9 +150,9 @@ class SearchForm extends React.Component {
                   <span>{longitude}</span>
                 </div>
               </div>
-            )}
+            )} 
           </div>
-        )}
+        )} */}
       </div>
     );
   }

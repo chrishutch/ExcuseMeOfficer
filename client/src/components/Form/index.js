@@ -6,7 +6,7 @@ export * from "./Address";
 export * from "./FormRow";
 export * from "./State";
 export * from "./Zip";
-export * from "./Evidence";
+export * from "./Evidence.js";
 export * from "./Witness";
 export * from "./DateCollected";
 export * from "./TimeCollected";

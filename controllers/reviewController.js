@@ -21,6 +21,18 @@ module.exports = {
   //     .then(dbModel => res.json(dbModel))
   //     .catch(err => res.status(422).json(err));
   // },
+    findByZip: function(req, res) {
+    let searchTerm = new RegExp(req.params.zipcode + '.*', 'i')
+    db.Review
+      .find({ zipcode: req.query.zipcode})
+      .sort({ date: -1 }) 
+      .then(dbModel => {
+        console.log('dbModel', dbModel)
+        res.json(dbModel)})
+      .catch(err => {
+        console.log(err)
+        res.status(422).json(err)}); 
+  },
   create: function(req, res) {
     db.Review
       .create(req.body)

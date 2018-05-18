@@ -19,13 +19,21 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "dotenv":"5.0.1",
+    "aws-sdk": "2.241.1",
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
     "final-form": "^4.6.1",
+    "mapbox-gl": "^0.45.0",
+    "mime": "^2.3.1",
     "mongoose": "^5.0.11",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-file-base64": "^1.0.3",
     "react-final-form": "^3.4.0",
     "react-final-form-listeners": "^1.0.0",
+    "react-mapbox-gl": "^3.8.0",
     "react-responsive-modal": "^3.0.1",
     "styled-components": "^3.2.6"
   }

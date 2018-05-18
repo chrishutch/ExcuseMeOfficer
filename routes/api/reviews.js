@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const reviewController = require("../../controllers/reviewController");
 
+const reviewController = require("../../controllers/reviewController");
 // Matches with "/api/review"
 router.route("/")
   .get(reviewController.findAll)
@@ -12,5 +12,16 @@ router
   .get(reviewController.findById)
   .put(reviewController.update)
   .delete(reviewController.remove);
+
+// router
+// .route("/sign-s3")
+// .get((req, res) =>{
+
+// })
+
+router
+    .route("/reviews/il/:zip")
+    .get(reviewController.findAll)
+    .get(reviewController.findByZip);
 
 module.exports = router;

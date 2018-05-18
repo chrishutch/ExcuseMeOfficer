@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Form } from 'react-final-form'
-import API from "../../utils/API";
 
 export default class Wizard extends React.Component {
   static propTypes = {

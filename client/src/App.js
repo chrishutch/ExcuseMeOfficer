@@ -11,6 +11,7 @@ import News from "./components/News/News.js";
 import FormInstance from "./pages/FormInstance";
 import ThankYou from "./pages/ThankYou";
 import Form from "./pages/Form";
+import Detail from "./pages/Detail";
 
 
 const App = () =>
@@ -39,13 +40,16 @@ const App = () =>
 
         {/*    Review Page     */}
 
-        <Route exact path="/reviews" component={Navbar} />
-        <Route exact path="/reviews" component={Review} />
+        <Route exact path="/reviews/il/:zip" component={Navbar} />
+        <Route exact path="/reviews/il/:zip" component={Review} />
+        <Route exact path="/reviews/il/:zip" component={Footer} />
 
         <Route exact path="/review" component={Navbar} />
         <Route exact path="/review" component={Review} />
         <Route exact path="/review" component={Footer} />
-
+        <Route exact path="/reviews/:id" component={Navbar} />
+        <Route exact path="/reviews/:id" component={Detail} />
+        <Route exact path="/reviews/:id" component={Footer} />
 
         {/*    Thank you Page     */}
         <Route exact path="/thankyou" component={Navbar} />
@@ -53,6 +57,7 @@ const App = () =>
 
          <Route exact path="/forms" component={Navbar} />
         <Route exact path="/forms" component={Form} />
+        <Route exact path="/forms" component={Footer} />
 
         <Route exact path="/thankyou" component={Footer} />
 
