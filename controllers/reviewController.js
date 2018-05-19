@@ -24,7 +24,7 @@ module.exports = {
     findByZip: function(req, res) {
     let searchTerm = new RegExp(req.params.zipcode + '.*', 'i')
     db.Review
-      .find({ zipcode: req.query.zipcode})
+      .find(`{ zipcode: '${searchTerm}'}`)
       .sort({ date: -1 }) 
       .then(dbModel => {
         console.log('dbModel', dbModel)

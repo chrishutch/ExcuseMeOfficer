@@ -78,16 +78,15 @@ console.log(this.state)
           shouldFetchSuggestions={address.length > 2}
         >
           {({ getInputProps, suggestions, getSuggestionItemProps }) => {
-                    return (
-               
-                        <div className="search-bar-container">
+            return (
+              <div className="search-bar-container">
                     <div className="search-input-container">
                         <div className="input-group mb-3">
                   <input
                     {...getInputProps({
-                        placeholder: 'Search by Zip Code',
-                        className: 'search-input form-control',
-                        id:"homesearch"
+                      placeholder: 'Search by Zip Code',
+                      className: 'search-input form-control',
+                      id:"homesearch"
                     })}
                   />
                   {this.state.address.length > 0 && (
@@ -98,46 +97,33 @@ console.log(this.state)
                     >
                     <i className="fa fa-search fa-md"></i>
                     </button>
+                    </div>
+                        )}
+                        </div>
+                </div>
+                {suggestions.length > 0 && (
+                  <div className="autocomplete-container">
+                    {suggestions.map(suggestion => {
+                      const className = classnames('suggestion-item', {
+                        'suggestion-item--active': suggestion.active,
+                      });
 
-                    />
-                    <div class="input-group-append">
-                        <button id="homesearchbutton"
-                            className="btn btn-success form-control"
-                            onClick={this.handleSelect}
+                      return (
+                        <div
+                          {...getSuggestionItemProps(suggestion, { className })}
                         >
-                            <i class="fa fa-search fa-md"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                          <strong>
+                            {suggestion.formattedSuggestion.mainText}
+                          </strong>{' '}
+                          <small>
+                            {suggestion.formattedSuggestion.secondaryText}
+                          </small>
+                        </div>
+                      );
+                    })}
 
-                    {/*Search Address Suggestions*/}
-
-            {suggestions.length > 0 && (
-                <div className="autocomplete-container">
-                {suggestions.map(suggestion => {
-                    const className = classnames('suggestion-item', {
-                    'suggestion-item--active': suggestion.active,
-                    });
-
-                    return (
-                    <div
-                        {...getSuggestionItemProps(suggestion, { className })}
-                    >
-                        <strong>
-                        {suggestion.formattedSuggestion.mainText}
-                        </strong>{' '}
-                        <small>
-                        {suggestion.formattedSuggestion.secondaryText}
-                        </small>
-                    </div>
-                    );
-                })}
-
-                </div>
+                  </div>
                 )}
-
-
               </div>
             );
           }}

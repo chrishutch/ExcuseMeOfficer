@@ -33,15 +33,16 @@ state = {
   }
 
   loadReviews = () => {
+    console.log(this.props.match.params.selected)
     API.getReviews()
       .then(res =>
         this.setState({ reviews: res.data, date: "", time: "", street: "", city: "", state:"IL", zipcode: "", officerName: "", officerBadge: "", ticketNumber: "", experience: "", filename: "", feedback: "", rating: "", witness: "" }))
       .catch(err => console.log(err));
   };
 
-    loadReviewsByZip = (zipcode) => {
+    loadReviewsByZip = (zip) => {
    
-    API.getReviewsByZip(this.props.match.params.zipcode)
+    API.getReviewsByZip(this.props.match.params.zip)
       .then(res => {
         console.log('res', res.data)
         console.log(this.props)  
@@ -65,7 +66,6 @@ state = {
           }) 
       }
       )
-      .then(console.log('state', this.state))
       .catch(err => console.log(err));
   };
          render() {
@@ -75,7 +75,7 @@ state = {
       {/* First Row */}
       <Row className="searchresults">
         <Col size="md-12">
-          <h2>Search Results!</h2>
+          <br />
         </Col>
             </Row>
 
@@ -103,7 +103,8 @@ state = {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>No Reviews for this Zip Code</h3>
+              // <Link to="/form">Write a Review</Link>
             )}
           </Col>
 
@@ -116,6 +117,7 @@ state = {
   
         </Row>
 </Container>
+<br />
   </div>
       );
   }
