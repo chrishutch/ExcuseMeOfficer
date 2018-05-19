@@ -9,7 +9,7 @@ var sectionStyle = {
     width: "100%",
     backgroundSize: 'cover',
     overflow: 'hidden',
-    height: "600px"
+    height: "500px"
 
 
 };
@@ -27,20 +27,20 @@ const Search = () => (
 
                               <li
                                   className={window.location.pathname === "/form" ? "active" : ""}>
-                                  <Link to="/forms">Write a Review</Link>
+                                  <Link to="/form">Write a Review</Link>
                               </li>
                               <li
                                   className={
                                       window.location.pathname === "/" ||
-                                          window.location.pathname === "/about"
+                                          window.location.pathname === "/guide"
                                           ? "active"
                                           : ""
                                   }
                               >
                                   <Link to="/review">Reviews</Link>
                               </li>
-                              <li className={window.location.pathname === "/about" ? "active" : ""}>
-                                  <Link to="/about">About</Link>
+                              <li className={window.location.pathname === "/guide" ? "active" : ""}>
+                                  <Link to="/guide">Guide</Link>
                               </li>
                           </ul>
                       </div>
@@ -67,7 +67,7 @@ const Search = () => (
   
 
       <Container style={{ minHeight: "95%" }}>
-                <h1 className="text-center"><img src={require('../images/4.png')} width="350px" height="250px"/></h1>
+                <h1 className="text-center"><img src={require('../images/4.png')} width="250px" height="250px"/></h1>
 
         <SearchForm/>
   

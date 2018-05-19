@@ -4,21 +4,17 @@ import "./Footer.css";
 
 function Footer(props) {
     return (
-        <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
+        <footer className="page-footer font-small stylish-color-dark pt-4 mt-4">
 
 
             <div className="container text-center text-md-left">
-                <div class="row">
+                <div className="row">
 
                     {/*Footer - Contact Us*/}
 
-                    <div class="col-md-7">
-                        <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Contact Us</h5>
-                        <p>Thank you for your interest in Excuse Me Officer.
-                           An App designed to hold authority figures accountable using a review
-                            based system.
-                            Feel free to Contact us with any questions, concerns or
-                            suggestions to improve our user experience.</p>
+                    <div className="col-md-7">
+                        <h5 className="text-uppercase mb-4 mt-3 font-weight-bold">About Us</h5>
+                        <p>Excuse Me Officer is a revolutionary platform that provides the needed transparency between police officers and the public.</p>
                     </div>
 
 
@@ -27,19 +23,19 @@ function Footer(props) {
                     <hr className="clearfix w-100 d-md-none" />
 
                     <div className="col-md-4 col-lg-2 ml-auto">
-                        <h5 className="text-uppercase mb-4 font-weight-bold">About</h5>
+                        <h5 className="text-uppercase mb-4 font-weight-bold">Links</h5>
                         <ul className="list-unstyled">
                             <p>
-                                <a id="footerlink" href="#!">PROJECTS</a>
+                                <a id="footerlink" href="#!">BLOG</a>
+                            </p>
+                            <p>
+                                <a href="/about">CAREERS</a>
                             </p>
                             <p>
                                 <a href="#!">ABOUT US</a>
                             </p>
                             <p>
-                                <a href="#!">BLOG</a>
-                            </p>
-                            <p>
-                                <a href="#!">AWARDS</a>
+                                <a href="#!">PRIVACY</a>
                             </p>
                         </ul>
                     </div>
@@ -54,11 +50,11 @@ function Footer(props) {
                         <p>
                             <i className="fa fa-home mr-3 fa-lg"></i> Chicago, IL 60626, US</p>
                         <p>
-                            <i className="fa fa-envelope mr-3 fa-lg"></i> excusemeofficer.com</p>
+                            <i className="fa fa-envelope mr-3 fa-lg"></i> info@excusemeofficer.com</p>
                         <p>
-                            <i className="fa fa-phone mr-3 fa-lg"></i> + (773) 555-1234</p>
+                            <i className="fa fa-phone mr-3 fa-lg"></i>  (312) 555-1234</p>
                         <p>
-                            <i className="fa fa-print mr-3 fa-lg"></i> + (773) 555-1234</p>
+                            <i className="fa fa-print mr-3 fa-lg"></i>  (312) 555-1234</p>
                     </div>
 
 
@@ -70,13 +66,13 @@ function Footer(props) {
 
 
 
-            <div class="text-center py-3">
-                <ul class="list-unstyled list-inline mb-0">
-                    <li class="list-inline-item">
-                        <h5 class="mb-1">Register for free</h5>
+            <div className="text-center py-3">
+                <ul className="list-unstyled list-inline mb-0">
+                    <li className="list-inline-item">
+                        <h5 className="mb-1"></h5>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+                    <li className="list-inline-item">
+                        <a href="/form" className="btn btn-success btn-rounded">Leave Officer Feedback</a>
                     </li>
                 </ul>
             </div>
@@ -84,7 +80,7 @@ function Footer(props) {
             <br />
 
 
-            <div class="text-center">
+            <div className="text-center">
                 <ul className="list-unstyled list-inline">
                     <li className="list-inline-item">
                         <a className="btn-floating btn-sm btn-fb">
@@ -116,8 +112,8 @@ function Footer(props) {
 
 
 
-            <div class="py-3 text-center">© 2018 Copyright:
-        <a href=""> ExcuseMeOfficer</a>
+            <div className="py-3 text-center">© 2018 Copyright
+        <a href="/"> Excuse Me Officer</a>
             </div>
 
 
