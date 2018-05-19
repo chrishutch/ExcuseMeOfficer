@@ -14,12 +14,6 @@ div[data-reactroot] {
     background-color: #F7F5EA;
 }
 
-label {
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 0 3px #000000;
-}
-
 
 #navbarSupportedContent {
     float: right;
@@ -327,7 +321,18 @@ footer a {
 
 /*Guide to Police Page CSS*/
 
+/*About Page*/
 
+#aboutpagetitle{
+    font-size:50px;
+    color: #375B60;
+
+}
+
+#aboutstatement {
+  font-size:20px;
+color: #375B60;
+}
 
 
 /*Detail Page*/
@@ -341,6 +346,67 @@ footer a {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -.05rem;
+}
+
+
+/*Form Page*/
+
+.form-check-label {
+	font-weight: bold;
+	color: #375B60;
+}
+
+.formpage input{
+	border: 2px solid #375B60;
+}
+
+.formpage h5 {
+	color: #375B60;
+}
+
+.formpage h2 {
+	color: #375B60;
+}
+
+.formpage h6 {
+	color: #375B60;
+}
+
+.formpage .btn {
+ border: 1px solid #375B60;
+ background-color: #99D092;
+ color: #375B60;
+}
+
+.formpage .btn:hover{
+  border: 1px solid #375B60;
+ background-color: #375B60;  
+  color: #99D092; 
+}
+
+
+.formpage textarea {
+	border: 2px solid #375B60;
+}
+
+.form-group input {
+	border: 2px solid #375B60;
+}
+
+
+.form-control {
+	border: 2px solid #375B60;
+}
+
+#formpagetitle {
+	font-size:50px;
+	color: #375B60;
+}
+
+
+
+.custom-file-label {
+		border: 2px solid #375B60;
 }
 
 

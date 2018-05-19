@@ -116,13 +116,13 @@ uploadFile(file, signedRequest, url){
   render() {
     console.log(this.state)
     return (
-      <div>
+      <div className="formpage">
       <Container fluid>
         <Row>
         <Col size="md-3">
         </Col>
           <Col size="md-6">
-              <h1>Leave Officer Feedback</h1>
+              <h1 id="formpagetitle">Leave Officer Feedback</h1>
               <br />
             <form>
             <h5>When did this happen?</h5>
@@ -177,7 +177,7 @@ uploadFile(file, signedRequest, url){
               <br/>
               <br/>
               <h5>What happened?</h5>
-              <h6>Tell us your story.</h6>
+              <h6>Tell us your story:</h6>
               <TextArea
                 value={this.state.feedback}
                 onChange={this.handleInputChange}

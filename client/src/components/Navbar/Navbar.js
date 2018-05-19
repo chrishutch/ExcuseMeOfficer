@@ -9,7 +9,7 @@ const Navbar = props =>
         <nav id="navbar" className="navbar navbar-light secondnav">
          
             <a className="navbar-brand" id="navlogo" href="/home">
-                <img alt="" src={require('../../images/2.png')} width="100px" height="50px" to="/about"/>
+                <img alt="" src={require('../../images/2.png')} width="100px" height="60px" to="/about"/>
             </a>
             <div className="d-flex justify-content-end">
             <form id="searchnav">
