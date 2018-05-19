@@ -98,21 +98,24 @@ label {
 /*Footer CSS*/
 
 footer {
-    color: white;
-    background-color: #99D092;
+    color: #F7F5EA;
+    background-color: #375b60;
     bottom: 0;
     overflow: hidden;
 }
 
+footer a {
+    color: #F7F5EA;
+}
+
 .page-footer {
-    text-shadow: 1px 0px 1px #000000;
-    border-top: 1px solid black;
+
     font-family: 'Arial';
 }
 
     .page-footer h5 {
-        color: #375b60;
-        text-shadow: 1px 2px 2px #FFFFFF;
+        color: #F7F5EA;
+        text-shadow: 0 0 2px #000000;
     }
 
 .footer-copyright {
@@ -126,7 +129,7 @@ footer {
 }
 
 .page-footer a {
-    color: white;
+    color: #F7F5EA;
     font-weight: bold;
     text-shadow: 0 0 3px #000000;
     bottom: 0;
@@ -138,6 +141,7 @@ footer {
         font-weight: bolder;
         text-shadow: 0 0 3px #000000;
     }
+
 
 
 
